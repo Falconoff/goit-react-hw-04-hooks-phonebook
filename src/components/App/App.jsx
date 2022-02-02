@@ -19,9 +19,10 @@ function App() {
 
   // for filter
   const normalizedFilter = filter.toLowerCase();
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalizedFilter)
-  );
+  console.dir(contacts);
+  const filteredContacts = contacts.filter(contact => {
+    return contact.name.toLowerCase().includes(normalizedFilter);
+  });
 
   const formSubmitHandler = data => {
     // checking name for matches
