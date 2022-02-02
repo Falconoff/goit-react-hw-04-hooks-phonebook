@@ -19,15 +19,12 @@ function App() {
 
   // for filter
   const normalizedFilter = filter.toLowerCase();
-  console.log('contacts', contacts);
-  const filteredContacts = contacts.filter(contact => {
-    return contact.name.toLowerCase().includes(normalizedFilter);
-  });
-  console.log('filteredContacts:', filteredContacts);
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(normalizedFilter)
+  );
 
   const formSubmitHandler = data => {
     // checking name for matches
-    console.log('receive data:', data);
     const normalizedName = data.name.toLowerCase();
     const isFoundName = contacts.some(
       contact => contact.name.toLowerCase() === normalizedName
