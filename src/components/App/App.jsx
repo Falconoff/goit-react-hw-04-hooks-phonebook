@@ -13,16 +13,17 @@ const LS_KEY = 'contacts';
 function App() {
   // State. Contacts from localStorage
   const [contacts, setContacts] = useState(
-    () => JSON.parse(window.localStorage.getItem(LS_KEY)) ?? ''
+    () => JSON.parse(window.localStorage.getItem(LS_KEY)) ?? []
   );
   const [filter, setFilter] = useState('');
 
   // for filter
   const normalizedFilter = filter.toLowerCase();
-  console.dir(contacts);
+  console.log('contacts', contacts);
   const filteredContacts = contacts.filter(contact => {
     return contact.name.toLowerCase().includes(normalizedFilter);
   });
+  console.log('filteredContacts:', filteredContacts);
 
   const formSubmitHandler = data => {
     // checking name for matches
